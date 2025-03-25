@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cv-container-1 {
+  background-color: #985050;
+  color: white;
+  padding: 10px 20px;
+}
+
+.cv-container-2 {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.cv-container-3 {
+  background-color: #985050;
+  color: rgb(251, 251, 251);
+  padding: 10px;
+}
+
+#cv-container-2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
