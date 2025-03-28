@@ -1,10 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Book = require("./model/book");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
 
+// Add CORS middleware
+app.use(cors());
 // Connect to MongoDB
 mongoose
   .connect("mongodb://127.0.0.1:27017/BookStore", {

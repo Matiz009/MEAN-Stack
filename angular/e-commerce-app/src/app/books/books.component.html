@@ -1,0 +1,53 @@
+<div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-2xl font-semibold text-center mb-4 text-gray-800">
+    Book List
+  </h2>
+
+  <!-- Add Button -->
+  <div class="flex justify-end mb-4">
+    <button
+      class="px-4 py-2 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700"
+      routerLink="/books/add"
+    >
+      + Add Book
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse border border-gray-300">
+      <thead class="bg-gray-700 text-white">
+        <tr>
+          <th class="p-3 text-left">Title</th>
+          <th class="p-3 text-left">Author</th>
+          <th class="p-3 text-left">Year</th>
+          <th class="p-3 text-left">Description</th>
+          <th class="p-3 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let book of books"
+          class="border-b border-gray-200 hover:bg-gray-100"
+        >
+          <td class="p-3">{{ book.title }}</td>
+          <td class="p-3">{{ book.author }}</td>
+          <td class="p-3">{{ book.year }}</td>
+          <td class="p-3">{{ book.description }}</td>
+          <td class="p-3 flex justify-center space-x-2">
+            <button
+              class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
+            >
+              Edit
+            </button>
+            <button
+              class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

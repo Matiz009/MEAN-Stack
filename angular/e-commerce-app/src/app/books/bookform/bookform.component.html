@@ -1,0 +1,64 @@
+<div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-xl font-bold mb-4 text-center">Add a New Book</h2>
+
+  <form [formGroup]="bookForm" (ngSubmit)="addBook()">
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold">Title</label>
+      <input
+        type="text"
+        formControlName="title"
+        class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter book title"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold">Author</label>
+      <input
+        type="text"
+        formControlName="author"
+        class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter author name"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold">Year</label>
+      <input
+        type="number"
+        formControlName="year"
+        class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter publication year"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold">Description</label>
+      <textarea
+        formControlName="description"
+        class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter book description"
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="button"
+      (click)="addBook()"
+      class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+    >
+      Add Book
+    </button>
+  </form>
+  <br />
+  <button
+    type="button"
+    routerLink="/"
+    class="w-full bg-green-800 text-white p-2 rounded-md hover:bg-green-600"
+  >
+    View Books
+  </button>
+</div>
