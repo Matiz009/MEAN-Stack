@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'], // ✅ Fixed "styleUrls"
+  styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
   books: Book[] = [];
@@ -25,6 +25,18 @@ export class BooksComponent implements OnInit {
       error: (err) => {
         console.error('❌ Error fetching books:', err);
         alert('⚠ Failed to load books. Please try again!');
+      },
+    });
+  }
+
+  deleteBook(bookId: string) {
+    this.bookService.deleteBook(bookId).subscribe({
+      next: () => {
+        console.log('✅ Book deleted successfully');
+        this.books = this.books.filter((book) => book._id !== bookId);
+      },
+      error: (error) => {
+        console.error('❌ Error deleting book:', error);
       },
     });
   }

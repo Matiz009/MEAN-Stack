@@ -47,10 +47,18 @@ app.get("/book/:id", async (req, res) => {
   res.send(book);
 });
 
-// Add a new route to delete a book by its ID
 app.delete("/book/:id", async (req, res) => {
-  let book = await Book.findByIdAndDelete(req.params.id);
-  res.send(book);
+  try {
+    const book = await Book.findByIdAndDelete(req.params.id);
+
+    if (!book) {
+      return res.status(404).json({ error: "Book not found" });
+    }
+
+    res.json({ message: "Book deleted successfully", book });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 // Add a new route to update a book by its ID

@@ -16,11 +16,8 @@ export class BookService {
   addBook(book: Book) {
     return this.http.post<[Book]>(`${this.apiURL}/create-book`, book);
   }
-  deleteBook(id: number) {
-    return this.http.delete(`${this.apiURL}/delete-book/${id}`);
-  }
 
-  updateBook(book: Book) {
-    return this.http.put(`${this.apiURL}/update-book/${book.id}`, book);
-  }
+deleteBook(bookId: string) {
+  return this.http.delete(`${this.apiURL}/book/${bookId}`);
+}
 }

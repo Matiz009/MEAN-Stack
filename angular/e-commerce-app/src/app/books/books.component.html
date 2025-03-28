@@ -35,13 +35,10 @@
           <td class="p-3">{{ book.year }}</td>
           <td class="p-3">{{ book.description }}</td>
           <td class="p-3 flex justify-center space-x-2">
-            <button
-              class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
-            >
-              Edit
-            </button>
+           
             <button
               class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+              (click)="deleteBook(book._id ?? '')"
             >
               Delete
             </button>
